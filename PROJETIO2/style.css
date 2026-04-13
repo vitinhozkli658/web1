@@ -1,0 +1,32 @@
+* {
+  marhin: 0;
+  padding: 0;
+  box-sizing: border_box;
+}
+header, footer {
+  background: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+.container {
+  display: flex;
+  height: 400px;
+}
+.coluna {
+  padding:20px;
+  border: 1px solid black;
+}
+.esquerdda {
+  width: 25px;
+  background: #f4f4f4;
+}
+.direita {
+  width: 25%;
+  flex-direction: column;
+}
+.meio {
+  width: 50%;
+  background: #ddd;
+}
+logo
+  
