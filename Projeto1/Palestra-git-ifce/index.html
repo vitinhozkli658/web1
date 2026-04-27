@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mural da Turma</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --border: #2e2e2e;
+        --accent: #f5e642;
+        --accent2: #42f5a7;
+        --accent3: #f542b0;
+        --text: #f0f0f0;
+        --muted: #888;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Space Mono", monospace;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+      }
+
+      /* ── Header ── */
+      header {
+        border-bottom: 2px solid var(--border);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        letter-spacing: -1px;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+
+      .badge {
+        background: var(--accent);
+        color: #000;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ── Intro banner ── */
+      .intro {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        margin: 2rem;
+        padding: 1.5rem;
+        border-radius: 4px;
+      }
+      .intro h2 {
+        font-family: "Syne", sans-serif;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--accent);
+      }
+      .intro p {
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.7;
+      }
+      .intro code {
+        background: #111;
+        border: 1px solid var(--border);
+        padding: 2px 6px;
+        border-radius: 3px;
+        color: var(--accent2);
+        font-size: 0.8rem;
+      }
+
+      /* ── Grid de cards ── */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 0 2rem 4rem;
+      }
+
+      /* ── Card ── */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        overflow: hidden;
+        transition:
+          transform 0.2s,
+          border-color 0.2s;
+        position: relative;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+      }
+
+      .card-color-bar {
+        height: 5px;
+        width: 100%;
+      }
+
+      .card-body {
+        padding: 1.25rem;
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        font-weight: bold;
+      }
+
+      .card-name {
+        font-family: "Syne", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+      .card-role {
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+
+      .card-text {
+        font-size: 0.82rem;
+        line-height: 1.7;
+        color: #ccc;
+        margin-bottom: 1rem;
+      }
+
+      .card-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        border-radius: 100px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+
+      /* ── Placeholder "Adicione o seu!" ── */
+      .card-placeholder {
+        border: 2px dashed var(--border);
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+        cursor: default;
+        transition: border-color 0.2s;
+      }
+      .card-placeholder:hover {
+        border-color: var(--accent2);
+        transform: none;
+      }
+      .card-placeholder .plus {
+        font-size: 2.5rem;
+        color: var(--accent2);
+        font-weight: 700;
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Mural da <span>Turma</span></div>
+      <span class="badge">Projeto Git/GitHub</span>
+    </header>
+
+    <!-- Instrução rápida -->
+    <div class="intro">
+      <h2>👋 Como participar?</h2>
+      <p>
+        Abra o arquivo <code>index.html</code>, copie um dos
+        <code>&lt;!-- CARD --&gt;</code> abaixo e preencha com
+        <strong>seu nome</strong>, <strong>seu emoji favorito</strong>, uma
+        <strong>frase sua</strong> e suas <strong>tecnologias/hobbies</strong>.
+        Depois faça o commit e abra um Pull Request. É só isso!
+      </p>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--         GRID DE CARDS DOS ALUNOS           -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="grid">
+      <!-- ── CARD EXEMPLO (professor) ── -->
+      <!-- CARD -->
+      <div class="card">
+        <div
+          class="card-color-bar"
+          style="background: linear-gradient(90deg, #f5e642, #f542b0)"
+        ></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="avatar" style="background: #1f1f1f; color: #f5e642">
+              👨‍🏫
+            </div>
+            <div>
+              <div class="card-name">Eu</div>
+            </div>
+          </div>
+          <p class="card-text">
+            Bem-vindos à aula prática de Git e GitHub! Cada um de vocês vai
+            adicionar o próprio card aqui.
+          </p>
+          <span class="card-tag">Git</span>
+          <span class="card-tag">GitHub</span>
+          <span class="card-tag">Open Source</span>
+        </div>
+      </div>
+      <!-- /CARD -->
+
+      <!-- ── CARD EXEMPLO ALUNO 1 ── -->
+      <!-- CARD -->
+      <div class="card">
+        <div
+          class="card-color-bar"
+          style="background: linear-gradient(90deg, #42f5a7, #42c5f5)"
+        ></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="avatar" style="background: #0d2b20; color: #42f5a7">
+              🦊
+            </div>
+            <div>
+              <div class="card-name">Placeholder 1</div>
+              <div class="card-role">Aluna · Turma 2026</div>
+            </div>
+          </div>
+          <p class="card-text">Me fale sobre voce!</p>
+          <span class="card-tag">Python</span>
+          <span class="card-tag">Design</span>
+          <span class="card-tag">Música</span>
+        </div>
+      </div>
+      <!-- /CARD -->
+
+      <!-- ── CARD EXEMPLO ALUNO 2 ── -->
+      <!-- CARD -->
+      <div class="card">
+        <div
+          class="card-color-bar"
+          style="background: linear-gradient(90deg, #42f5a7, #42c5f5)"
+        ></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="avatar" style="background: #0d2b20; color: #42f5a7">
+              🦊
+            </div>
+            <div>
+              <div class="card-name">Placeholder 2</div>
+              <div class="card-role">Aluna · Turma 2026</div>
+            </div>
+          </div>
+          <p class="card-text">Me fale sobre voce!</p>
+          <span class="card-tag">Python</span>
+          <span class="card-tag">Design</span>
+          <span class="card-tag">Música</span>
+        </div>
+      </div>
+      <!-- /CARD -->
+
+      <!-- ════════════════════════════════════════ -->
+      <!--   ✏️  ADICIONE SEU CARD ABAIXO          -->
+      <!--   Copie o bloco entre CARD e /CARD      -->
+      <!--   e substitua os dados pelo seus!       -->
+      <!-- ════════════════════════════════════════ -->
+
+      <!-- Espaço reservado visual -->
+      <div class="card">
+        <div
+          class="card-color-bar"
+          style="background: linear-gradient(90deg, #42f5a7, #42c5f5)"
+        ></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="avatar" style="background: #0d2b20; color: #42f5a7">
+              🦊
+            </div>
+            <div>
+              <div class="card-name">Luiza 1</div>
+              <div class="card-role">Aluna · Turma 2026</div>
+            </div>
+          </div>
+          <p class="card-text">Estudante de ciências da computação </p>
+          <span class="card-tag">Livros</span>
+          <span class="card-tag">Manhwas</span>
+          <span class="card-tag">Doramas</span>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+    <!-- /GRID -->
+
+    <footer>
+      Feito com ❤️ durante a aula de Git &amp; GitHub · Projeto colaborativo da
+      turma 2026.1
+    </footer>
+  </body>
+</html>
