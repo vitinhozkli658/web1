@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="painel-palavra">
+        <h2>Palavra Sorteada</h2>
+
+        <div id="palavra">
+            ----
+        </div>
+
+        <div class="info">
+            <button onclick="sortearPalavra()">
+                Novo Sorteio
+            </button>
+
+            <span id="restantes">26 restantes</span>
+        </div>
+    </div>
+
+    <div class="jogadores">
+
+        <div class="jogador">
+            <h3>Jogador 01</h3>
+            <div class="cartela"></div>
+        </div>
+
+        <div class="jogador">
+            <h3>Jogador 02</h3>
+            <div class="cartela"></div>
+        </div>
+
+        <div class="jogador">
+            <h3>Jogador 03</h3>
+            <div class="cartela"></div>
+        </div>
+
+        <div class="jogador">
+            <h3>Jogador 04</h3>
+            <div class="cartela"></div>
+        </div>
+
+        <div class="jogador">
+            <h3>Jogador 05</h3>
+            <div class="cartela"></div>
+        </div>
+
+        <div class="jogador">
+            <h3>Jogador 06</h3>
+            <div class="cartela"></div>
+        </div>
+
+    </div>
+
+    <div class="rodape">
+        <input
+            type="text"
+            placeholder="Palavras sorteadas"
+            readonly
+        >
+
+        <button class="sair" onclick="sair()">
+            Sair
+        </button>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

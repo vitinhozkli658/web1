@@ -1,0 +1,109 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0048b5;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    text-align:center;
+    padding:30px;
+}
+
+.home{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo{
+    font-size:80px;
+    color:#ffe600;
+}
+
+.logo span{
+    color:#0fa53a;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 35px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:20px;
+    background:#0a005e;
+    color:white;
+}
+
+.painel-palavra{
+    background:#0c8b3d;
+    width:400px;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
+}
+
+#palavra{
+    background:#ffe600;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    font-size:30px;
+}
+
+.jogadores{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.jogador{
+    background:#f7d700;
+    padding:15px;
+    border-radius:15px;
+}
+
+.cartela{
+    height:100px;
+    background:white;
+    border-radius:10px;
+}
+
+.rodape{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+input{
+    width:60%;
+    padding:12px;
+}
+
+.sair{
+    background:red;
+}
+
+.vencedor{
+    color:white;
+}
+
+.bandeira{
+    width:500px;
+    max-width:100%;
+}
+
+.trofeu{
+    font-size:120px;
+}
