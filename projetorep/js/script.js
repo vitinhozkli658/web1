@@ -1,32 +1,54 @@
-const r = document.getElementById("r");
-const g = document.getElementById("g");
-const b = document.getElementById("b");
 
-const valorR = document.getElementById("valorR");
-const valorG = document.getElementById("valorG");
-const valorB = document.getElementById("valorB");
 
-const cor = document.getElementById("cor");
-const codigo = document.getElementById("codigo");
+let rangeR = document.getElementById("range-r");
+let rangeG = document.getElementById("range-g");
+let rangeB = document.getElementById("range-b");
 
-function atualizarCor() {
+let valorR = document.getElementById("valor-r");
+let valorG = document.getElementById("valor-g");
+let valorB = document.getElementById("valor-b");
 
-    let vermelho = r.value;
-    let verde = g.value;
-    let azul = b.value;
+let colR = document.getElementById("coluna-vermelho");
+let colG = document.getElementById("coluna-verde");
+let colB = document.getElementById("coluna-azul");
 
-    valorR.textContent = vermelho;
-    valorG.textContent = verde;
-    valorB.textContent = azul;
+let cabecalho = document.querySelector("header");
+let rodape = document.querySelector("footer");
+let barraLateral = document.querySelector(".barra-lateral");
 
-    let rgb = `rgb(${vermelho}, ${verde}, ${azul})`;
 
-    cor.style.backgroundColor = rgb;
-    codigo.textContent = rgb;
+
+function atualizarCores(){
+
+    let r = parseInt(rangeR.value);
+    let g = parseInt(rangeG.value);
+    let b = parseInt(rangeB.value);
+
+    
+
+    valorR.innerHTML = r;
+    valorG.innerHTML = g;
+    valorB.innerHTML = b;
+
+    
+    colR.style.backgroundColor = "rgb(" + r + ",0,0)";
+    colG.style.backgroundColor = "rgb(0," + g + ",0)";
+    colB.style.backgroundColor = "rgb(0,0," + b + ")";
+
+
+
+    let cor = "rgb(" + r + "," + g + "," + b + ")";
+
+    cabecalho.style.backgroundColor = cor;
+    rodape.style.backgroundColor = cor;
+    barraLateral.style.backgroundColor = cor;
+
+
+
+rangeR.addEventListener("input", atualizarCores);
+rangeG.addEventListener("input", atualizarCores);
+rangeB.addEventListener("input", atualizarCores);
+
 }
 
-r.addEventListener("input", atualizarCor);
-g.addEventListener("input", atualizarCor);
-b.addEventListener("input", atualizarCor);
-
-atualizarCor();
+atualizarCores();

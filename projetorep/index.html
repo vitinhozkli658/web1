@@ -1,28 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cores RGB</title>
+    <title>Desafio CSS DOM - Cores</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Gerador de Cores RGB</h1>
-    <div class="controle">
-        <label>R: <span id="valorR">0</span></label>
-        <input type="range" id="r" min="0" max="255" value="0">
-    </div>
-    <div class="controle">
-        <label>G: <span id="valorG">0</span></label>
-        <input type="range" id="g" min="0" max="255" value="0">
-    </div>
-    <div class="controle">
-        <label>B: <span id="valorB">0</span></label>
-        <input type="range" id="b" min="0" max="255" value="0">
-    </div>
-    <div id="cor"></div>
-    <p id="codigo">rgb(0,0,0)</p>
 
-   <script src="js/script.js"></script> 
+    <header>
+        <p>Movimente as barras para construir sua cor.</p>
+        <span class="cor-resultante-txt">cor resultante</span>
+    </header>
+
+    <main class="container-cores">
+        <div class="coluna" id="coluna-vermelho">
+            <label>Vermelho (R)</label>
+            <div class="controle-range">
+                <span>0</span>
+                <input type="range" id="range-r" min="0" max="255" value="128">
+                <span>255</span>
+            </div>
+            <div class="valor-atual" id="valor-r">128</div>
+        </div>
+
+        <div class="coluna" id="coluna-verde">
+            <label>Verde (G)</label>
+            <div class="controle-range">
+                <span>0</span>
+                <input type="range" id="range-g" min="0" max="255" value="128">
+                <span>255</span>
+            </div>
+            <div class="valor-atual" id="valor-g">128</div>
+        </div>
+
+        <div class="coluna" id="coluna-azul">
+            <label>Azul (B)</label>
+            <div class="controle-range">
+                <span>0</span>
+                <input type="range" id="range-b" min="0" max="255" value="128">
+                <span>255</span>
+            </div>
+            <div class="valor-atual" id="valor-b">128</div>
+        </div>
+
+        <div class="barra-lateral">
+            <span>CORES BÁSICAS</span>
+        </div>
+    </main>
+
+    <footer>
+        <span class="cor-resultante-txt">cor resultante</span>
+        <p>Cores DOM CSS - Programação Web I (Prof. Daniel Ferreira) - IFCE Campus Maracanaú</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
